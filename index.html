@@ -14,14 +14,14 @@
         theme: {
           extend: {
             colors: {
-              spark: "#6D5EF8",
-              neon: "#26D0CE",
-              sun: "#F9C74F",
-              pop: "#FF6B8A",
-              ink: "#0F172A"
+              spark: "#E5E7EB",
+              neon: "#CBD5E1",
+              sun: "#94A3B8",
+              pop: "#64748B",
+              ink: "#111827"
             },
             boxShadow: {
-              glow: "0 0 0 1px rgba(255,255,255,0.08), 0 24px 80px rgba(38,208,206,0.18)"
+              glow: "0 0 0 1px rgba(255,255,255,0.08), 0 24px 80px rgba(15,23,42,0.28)"
             },
             backgroundImage: {
               grid: "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.08) 1px, transparent 0)"
@@ -37,13 +37,13 @@
 
       body {
         background:
-          radial-gradient(circle at top left, rgba(109, 94, 248, 0.35), transparent 30%),
-          radial-gradient(circle at top right, rgba(38, 208, 206, 0.25), transparent 28%),
-          linear-gradient(180deg, #020617 0%, #0f172a 45%, #111827 100%);
+          radial-gradient(circle at top left, rgba(148, 163, 184, 0.14), transparent 30%),
+          radial-gradient(circle at top right, rgba(203, 213, 225, 0.12), transparent 28%),
+          linear-gradient(180deg, #111827 0%, #0f172a 42%, #020617 100%);
       }
 
       .glass {
-        background: rgba(15, 23, 42, 0.62);
+        background: rgba(17, 24, 39, 0.72);
         backdrop-filter: blur(16px);
       }
 
@@ -52,7 +52,7 @@
         position: absolute;
         inset: -1px;
         border-radius: 1.5rem;
-        background: linear-gradient(135deg, rgba(109, 94, 248, 0.5), rgba(38, 208, 206, 0.35), rgba(249, 199, 79, 0.3));
+        background: linear-gradient(135deg, rgba(229, 231, 235, 0.22), rgba(148, 163, 184, 0.18), rgba(100, 116, 139, 0.18));
         z-index: -1;
       }
 
@@ -90,6 +90,7 @@
 
           <div class="hidden items-center gap-8 md:flex">
             <a href="#programs" class="text-sm text-slate-300 transition hover:text-white">Programs</a>
+            <a href="#downloads" class="text-sm text-slate-300 transition hover:text-white">Downloads</a>
             <a href="#explorer" class="text-sm text-slate-300 transition hover:text-white">Explorer</a>
             <a href="#highlights" class="text-sm text-slate-300 transition hover:text-white">Highlights</a>
             <a href="#contact" class="rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/20">Join the Adventure</a>
@@ -107,6 +108,7 @@
         <div id="mobileMenu" class="mx-6 mb-4 hidden rounded-3xl border border-white/10 bg-slate-900/90 p-4 md:hidden">
           <div class="flex flex-col gap-3 text-sm">
             <a href="#programs" class="rounded-2xl px-3 py-2 hover:bg-white/5">Programs</a>
+            <a href="#downloads" class="rounded-2xl px-3 py-2 hover:bg-white/5">Downloads</a>
             <a href="#explorer" class="rounded-2xl px-3 py-2 hover:bg-white/5">Explorer</a>
             <a href="#highlights" class="rounded-2xl px-3 py-2 hover:bg-white/5">Highlights</a>
             <a href="#contact" class="rounded-2xl bg-white/10 px-3 py-2 font-semibold">Join the Adventure</a>
@@ -360,6 +362,22 @@
           <div id="programCards" class="mt-10 grid gap-6 lg:grid-cols-2"></div>
         </section>
 
+        <section id="downloads" class="mx-auto max-w-7xl px-6 pb-20 lg:px-8">
+          <div class="glass rounded-[2rem] border border-white/10 p-6 md:p-8">
+            <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+              <div>
+                <p class="text-sm font-semibold uppercase tracking-[0.3em] text-neon">Downloadable curriculum guides</p>
+                <h2 class="mt-3 text-4xl font-black tracking-tight text-white">PDF handouts for every course.</h2>
+                <p class="mt-3 max-w-3xl text-slate-300">
+                  Download a professional curriculum overview for each pathway with content focus, skill development, expected outcomes, and capstone details.
+                </p>
+              </div>
+            </div>
+
+            <div id="downloadCards" class="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4"></div>
+          </div>
+        </section>
+
         <section id="explorer" class="mx-auto max-w-7xl px-6 pb-24 lg:px-8">
           <div class="glass rounded-[2rem] border border-white/10 p-6 md:p-8">
             <div class="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
@@ -595,6 +613,7 @@
           color: "spark",
           image: "https://images.unsplash.com/photo-1535378917042-10a22c95931a?auto=format&fit=crop&w=1200&q=80",
           imageAlt: "Robotics workspace and technology components",
+          pdf: "downloads/robot-mechanics-and-logic-curriculum.pdf",
           description:
             "Learn loops, sensors, geometry, and conditionals by programming real robots to move, react, and solve physical challenges.",
           contentFocus: [
@@ -709,6 +728,7 @@
           color: "sun",
           image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80",
           imageAlt: "Programming code displayed on a laptop screen",
+          pdf: "downloads/transition-to-text-python-curriculum.pdf",
           description:
             "Help kids move from drag-and-drop blocks to typed Python by making visuals, mini-games, and playful text projects.",
           contentFocus: [
@@ -823,6 +843,7 @@
           color: "pop",
           image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
           imageAlt: "Web design and coding setup on a desktop monitor",
+          pdf: "downloads/creating-for-the-web-curriculum.pdf",
           description:
             "Shift students from web consumers to web creators as they design structured pages, modern layouts, and interactive features.",
           contentFocus: [
@@ -937,6 +958,7 @@
           color: "neon",
           image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
           imageAlt: "Robot representing artificial intelligence and future technology",
+          pdf: "downloads/future-tech-ai-ethical-programming-curriculum.pdf",
           description:
             "Teach kids how AI works, where it fails, and how to use automation responsibly through experiments, analysis, and invention.",
           contentFocus: [
@@ -1077,6 +1099,7 @@
       const menuButton = document.getElementById("menuButton");
       const mobileMenu = document.getElementById("mobileMenu");
       const programCards = document.getElementById("programCards");
+      const downloadCards = document.getElementById("downloadCards");
       const programTabs = document.getElementById("programTabs");
       const programSummary = document.getElementById("programSummary");
       const monthOverview = document.getElementById("monthOverview");
@@ -1120,12 +1143,6 @@
                     <span class="inline-flex rounded-full ${colors.bg} ${colors.text} px-3 py-1 text-xs font-bold uppercase tracking-[0.25em]">${program.badge}</span>
                     <h3 class="mt-4 text-2xl font-black text-white">${program.title}</h3>
                   </div>
-                  <button
-                    data-program="${program.id}"
-                    class="jump-to-program rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/10"
-                  >
-                    Open explorer
-                  </button>
                 </div>
 
                 <p class="mt-4 text-sm leading-7 text-slate-300">${program.description}</p>
@@ -1162,6 +1179,22 @@
                   <p class="text-xs uppercase tracking-[0.25em] text-slate-400">Capstone</p>
                   <p class="mt-2 text-sm leading-7 text-white">${program.capstone}</p>
                 </div>
+
+                <div class="mt-6 flex flex-wrap gap-3">
+                  <button
+                    data-program="${program.id}"
+                    class="jump-to-program rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/10"
+                  >
+                    Open explorer
+                  </button>
+                  <a
+                    href="${program.pdf}"
+                    download
+                    class="rounded-full bg-gradient-to-r ${colors.button} px-4 py-2 text-sm font-semibold text-slate-950 transition hover:scale-[1.02]"
+                  >
+                    Download PDF
+                  </a>
+                </div>
               </article>
             `;
           })
@@ -1174,6 +1207,28 @@
             document.getElementById("explorer").scrollIntoView({ behavior: "smooth" });
           });
         });
+      }
+
+      function renderDownloadCards() {
+        downloadCards.innerHTML = programs
+          .map((program) => {
+            const colors = colorClasses[program.color];
+            return `
+              <article class="rounded-[1.5rem] border border-white/10 bg-slate-950/50 p-5">
+                <p class="text-xs font-bold uppercase tracking-[0.25em] ${colors.text}">${program.badge}</p>
+                <h3 class="mt-3 text-xl font-black text-white">${program.shortTitle}</h3>
+                <p class="mt-3 text-sm leading-7 text-slate-300">${program.description}</p>
+                <a
+                  href="${program.pdf}"
+                  download
+                  class="mt-5 inline-flex rounded-full bg-gradient-to-r ${colors.button} px-4 py-2 text-sm font-semibold text-slate-950 transition hover:scale-[1.02]"
+                >
+                  Download curriculum PDF
+                </a>
+              </article>
+            `;
+          })
+          .join("");
       }
 
       function renderTabs() {
@@ -1223,6 +1278,13 @@
                   .map((item) => `<li class="flex gap-2"><span class="${colors.text}">•</span><span>${item}</span></li>`)
                   .join("")}
               </ul>
+              <a
+                href="${program.pdf}"
+                download
+                class="mt-6 inline-flex rounded-full bg-gradient-to-r ${colors.button} px-4 py-2 text-sm font-semibold text-slate-950 transition hover:scale-[1.02]"
+              >
+                Download curriculum PDF
+              </a>
             </div>
             <div class="rounded-[1.5rem] border border-white/10 bg-slate-950/60 p-6">
               <p class="text-xs uppercase tracking-[0.25em] text-slate-400">How it helps students</p>
@@ -1313,6 +1375,7 @@
       });
 
       renderProgramCards();
+      renderDownloadCards();
       renderExplorer();
     </script>
   </body>
