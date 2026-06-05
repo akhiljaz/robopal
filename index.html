@@ -388,6 +388,7 @@
             </div>
 
             <div id="programTabs" class="mt-8 flex flex-wrap gap-3"></div>
+            <div id="programSummary" class="mt-8"></div>
             <div id="monthOverview" class="mt-8 grid gap-4 md:grid-cols-3"></div>
             <div id="weekList" class="mt-8 space-y-4"></div>
           </div>
@@ -596,6 +597,21 @@
           imageAlt: "Robotics workspace and technology components",
           description:
             "Learn loops, sensors, geometry, and conditionals by programming real robots to move, react, and solve physical challenges.",
+          contentFocus: [
+            "Robot movement, wheel rotations, steering, and distance measurement",
+            "Sensor-based programming with touch, ultrasonic, and color inputs",
+            "Loops, conditionals, and multi-sensor logic for autonomous behavior"
+          ],
+          studentBenefits: [
+            "Strengthens problem solving by testing, adjusting, and improving robot behavior",
+            "Builds spatial reasoning and cause-and-effect thinking through real-world movement challenges",
+            "Develops persistence and debugging habits when code and hardware must work together"
+          ],
+          outcomes: [
+            "Students can program a robot to move accurately, react to obstacles, and follow simple paths",
+            "Students understand how sensors inform decisions inside a working system",
+            "Students complete an autonomous capstone they can explain and demonstrate with confidence"
+          ],
           goals: [
             "Understand movement, steering, and basic geometry",
             "Use touch, ultrasonic, and color sensors",
@@ -695,6 +711,21 @@
           imageAlt: "Programming code displayed on a laptop screen",
           description:
             "Help kids move from drag-and-drop blocks to typed Python by making visuals, mini-games, and playful text projects.",
+          contentFocus: [
+            "Syntax, indentation, variables, and user input in real typed code",
+            "Loops, conditionals, randomness, lists, and functions",
+            "Visual turtle drawings and beginner-friendly game building"
+          ],
+          studentBenefits: [
+            "Builds computational thinking by breaking larger tasks into smaller code steps",
+            "Improves debugging confidence as students learn to read and fix errors independently",
+            "Strengthens logic and sequencing through interactive programs and game rules"
+          ],
+          outcomes: [
+            "Students can write small Python programs from scratch with correct structure",
+            "Students can build simple interactive games and command-line tools",
+            "Students begin to transition from block coding to text coding with much more confidence"
+          ],
           goals: [
             "Build confidence with syntax and debugging",
             "Use variables, loops, conditionals, and randomness",
@@ -794,6 +825,21 @@
           imageAlt: "Web design and coding setup on a desktop monitor",
           description:
             "Shift students from web consumers to web creators as they design structured pages, modern layouts, and interactive features.",
+          contentFocus: [
+            "HTML structure with headings, text, images, links, and lists",
+            "CSS styling with colors, spacing, selectors, box model, and flexbox",
+            "Introductory JavaScript for clicks, DOM updates, and dynamic page behavior"
+          ],
+          studentBenefits: [
+            "Develops creativity and communication by helping students present ideas visually",
+            "Builds design thinking through layout, readability, and user experience decisions",
+            "Shows how separate technologies work together to create a polished digital product"
+          ],
+          outcomes: [
+            "Students can create and style complete multi-section webpages",
+            "Students can add simple interactivity to make websites feel alive",
+            "Students leave with a portfolio-style project they can proudly share"
+          ],
           goals: [
             "Understand how browsers load and display pages",
             "Create structure with HTML and style with CSS",
@@ -893,6 +939,21 @@
           imageAlt: "Robot representing artificial intelligence and future technology",
           description:
             "Teach kids how AI works, where it fails, and how to use automation responsibly through experiments, analysis, and invention.",
+          contentFocus: [
+            "How AI differs from traditional programming and why data quality matters",
+            "Training sets, sound and vision models, prompt use, and simple API ideas",
+            "Ethics topics including bias, privacy, cybersecurity, and media literacy"
+          ],
+          studentBenefits: [
+            "Builds critical thinking by asking students to question how systems make decisions",
+            "Develops ethical reasoning around fairness, privacy, and responsible technology use",
+            "Improves analysis skills by comparing outputs, spotting flaws, and defending design choices"
+          ],
+          outcomes: [
+            "Students can explain core AI ideas in age-appropriate, practical language",
+            "Students can identify common risks such as bias, hallucinations, and weak data",
+            "Students can propose a thoughtful tech-for-good solution with clear ethical safeguards"
+          ],
           goals: [
             "Understand AI vs. traditional coding",
             "Explore training data, bias, and media literacy",
@@ -1017,6 +1078,7 @@
       const mobileMenu = document.getElementById("mobileMenu");
       const programCards = document.getElementById("programCards");
       const programTabs = document.getElementById("programTabs");
+      const programSummary = document.getElementById("programSummary");
       const monthOverview = document.getElementById("monthOverview");
       const weekList = document.getElementById("weekList");
       const searchInput = document.getElementById("searchInput");
@@ -1077,6 +1139,25 @@
                     .join("")}
                 </div>
 
+                <div class="mt-6 grid gap-4 md:grid-cols-2">
+                  <div class="rounded-3xl border border-white/10 bg-white/5 p-5">
+                    <p class="text-xs uppercase tracking-[0.25em] text-slate-400">How it helps students</p>
+                    <ul class="mt-3 space-y-2 text-sm leading-7 text-slate-200">
+                      ${program.studentBenefits
+                        .map((item) => `<li class="flex gap-2"><span class="${colors.text}">•</span><span>${item}</span></li>`)
+                        .join("")}
+                    </ul>
+                  </div>
+                  <div class="rounded-3xl border border-white/10 bg-white/5 p-5">
+                    <p class="text-xs uppercase tracking-[0.25em] text-slate-400">Expected outcomes</p>
+                    <ul class="mt-3 space-y-2 text-sm leading-7 text-slate-200">
+                      ${program.outcomes
+                        .map((item) => `<li class="flex gap-2"><span class="${colors.text}">•</span><span>${item}</span></li>`)
+                        .join("")}
+                    </ul>
+                  </div>
+                </div>
+
                 <div class="mt-6 rounded-3xl border border-white/10 bg-slate-950/60 p-5">
                   <p class="text-xs uppercase tracking-[0.25em] text-slate-400">Capstone</p>
                   <p class="mt-2 text-sm leading-7 text-white">${program.capstone}</p>
@@ -1131,6 +1212,37 @@
         const query = searchInput.value.trim().toLowerCase();
         const colors = colorClasses[program.color];
 
+        programSummary.innerHTML = `
+          <div class="grid gap-4 lg:grid-cols-[1.1fr_0.9fr_0.9fr]">
+            <div class="rounded-[1.5rem] border border-white/10 bg-slate-950/60 p-6">
+              <p class="text-xs uppercase tracking-[0.25em] ${colors.text}">Course content</p>
+              <h3 class="mt-3 text-2xl font-black text-white">${program.title}</h3>
+              <p class="mt-3 text-sm leading-7 text-slate-300">${program.description}</p>
+              <ul class="mt-5 space-y-2 text-sm leading-7 text-slate-200">
+                ${program.contentFocus
+                  .map((item) => `<li class="flex gap-2"><span class="${colors.text}">•</span><span>${item}</span></li>`)
+                  .join("")}
+              </ul>
+            </div>
+            <div class="rounded-[1.5rem] border border-white/10 bg-slate-950/60 p-6">
+              <p class="text-xs uppercase tracking-[0.25em] text-slate-400">How it helps students</p>
+              <ul class="mt-3 space-y-3 text-sm leading-7 text-slate-200">
+                ${program.studentBenefits
+                  .map((item) => `<li class="flex gap-2"><span class="${colors.text}">•</span><span>${item}</span></li>`)
+                  .join("")}
+              </ul>
+            </div>
+            <div class="rounded-[1.5rem] border border-white/10 bg-slate-950/60 p-6">
+              <p class="text-xs uppercase tracking-[0.25em] text-slate-400">Expected outcomes</p>
+              <ul class="mt-3 space-y-3 text-sm leading-7 text-slate-200">
+                ${program.outcomes
+                  .map((item) => `<li class="flex gap-2"><span class="${colors.text}">•</span><span>${item}</span></li>`)
+                  .join("")}
+              </ul>
+            </div>
+          </div>
+        `;
+
         monthOverview.innerHTML = program.months
           .map(
             (month, index) => `
@@ -1147,7 +1259,7 @@
 
         const filteredWeeks = program.weeks.filter((lesson) => {
           if (!query) return true;
-          const haystack = `${lesson.week} ${lesson.title} ${lesson.topic} ${lesson.activity}`.toLowerCase();
+          const haystack = `${program.description} ${program.contentFocus.join(" ")} ${program.studentBenefits.join(" ")} ${program.outcomes.join(" ")} ${lesson.week} ${lesson.title} ${lesson.topic} ${lesson.activity}`.toLowerCase();
           return haystack.includes(query);
         });
 
