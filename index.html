@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RoboPal Academy | Future-Ready Tech Adventures</title>
+    <meta
+      name="description"
+      content="An interactive modern curriculum website for kids 10+ featuring robotics, Python, web development, and AI ethics."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              spark: "#6D5EF8",
+              neon: "#26D0CE",
+              sun: "#F9C74F",
+              pop: "#FF6B8A",
+              ink: "#0F172A"
+            },
+            boxShadow: {
+              glow: "0 0 0 1px rgba(255,255,255,0.08), 0 24px 80px rgba(38,208,206,0.18)"
+            },
+            backgroundImage: {
+              grid: "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.08) 1px, transparent 0)"
+            }
+          }
+        }
+      };
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background:
+          radial-gradient(circle at top left, rgba(109, 94, 248, 0.35), transparent 30%),
+          radial-gradient(circle at top right, rgba(38, 208, 206, 0.25), transparent 28%),
+          linear-gradient(180deg, #020617 0%, #0f172a 45%, #111827 100%);
+      }
+
+      .glass {
+        background: rgba(15, 23, 42, 0.62);
+        backdrop-filter: blur(16px);
+      }
+
+      .program-card::before {
+        content: "";
+        position: absolute;
+        inset: -1px;
+        border-radius: 1.5rem;
+        background: linear-gradient(135deg, rgba(109, 94, 248, 0.5), rgba(38, 208, 206, 0.35), rgba(249, 199, 79, 0.3));
+        z-index: -1;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen text-slate-100 selection:bg-neon/30 selection:text-white">
+    <div class="bg-grid bg-[size:24px_24px]">
+      <header class="sticky top-0 z-40 border-b border-white/10 bg-slate-950/65 backdrop-blur-xl">
+        <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+          <a href="#top" class="flex items-center gap-3">
+            <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-spark to-neon text-lg font-black text-slate-950">
+              RP
+            </div>
+            <div>
+              <p class="text-lg font-extrabold tracking-wide">RoboPal Academy</p>
+              <p class="text-xs uppercase tracking-[0.3em] text-neon">Ages 10+</p>
+            </div>
+          </a>
+
+          <div class="hidden items-center gap-8 md:flex">
+            <a href="#programs" class="text-sm text-slate-300 transition hover:text-white">Programs</a>
+            <a href="#explorer" class="text-sm text-slate-300 transition hover:text-white">Explorer</a>
+            <a href="#highlights" class="text-sm text-slate-300 transition hover:text-white">Highlights</a>
+            <a href="#contact" class="rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/20">Join the Adventure</a>
+          </div>
+
+          <button
+            id="menuButton"
+            class="inline-flex items-center rounded-full border border-white/15 px-4 py-2 text-sm font-semibold md:hidden"
+            aria-label="Toggle menu"
+          >
+            Menu
+          </button>
+        </nav>
+
+        <div id="mobileMenu" class="mx-6 mb-4 hidden rounded-3xl border border-white/10 bg-slate-900/90 p-4 md:hidden">
+          <div class="flex flex-col gap-3 text-sm">
+            <a href="#programs" class="rounded-2xl px-3 py-2 hover:bg-white/5">Programs</a>
+            <a href="#explorer" class="rounded-2xl px-3 py-2 hover:bg-white/5">Explorer</a>
+            <a href="#highlights" class="rounded-2xl px-3 py-2 hover:bg-white/5">Highlights</a>
+            <a href="#contact" class="rounded-2xl bg-white/10 px-3 py-2 font-semibold">Join the Adventure</a>
+          </div>
+        </div>
+      </header>
+
+      <main id="top">
+        <section class="relative overflow-hidden">
+          <div class="mx-auto grid max-w-7xl gap-16 px-6 py-20 lg:grid-cols-[1.15fr_0.85fr] lg:px-8 lg:py-24">
+            <div class="space-y-8">
+              <span class="inline-flex items-center gap-2 rounded-full border border-neon/30 bg-neon/10 px-4 py-2 text-sm font-semibold text-neon">
+                <span class="h-2.5 w-2.5 rounded-full bg-neon"></span>
+                Interactive STEM Journey for Kids 10+
+              </span>
+
+              <div class="space-y-5">
+                <h1 class="max-w-3xl text-5xl font-black leading-tight tracking-tight text-white md:text-6xl">
+                  Build robots, code games, create websites, and explore ethical AI.
+                </h1>
+                <p class="max-w-2xl text-lg leading-8 text-slate-300">
+                  A modern, project-based curriculum that turns curious kids into confident creators through hands-on robotics, Python, web design, and future tech.
+                </p>
+              </div>
+
+              <div class="flex flex-wrap gap-4">
+                <a
+                  href="#explorer"
+                  class="rounded-full bg-gradient-to-r from-spark to-neon px-6 py-3 text-sm font-bold text-slate-950 shadow-glow transition hover:scale-[1.02]"
+                >
+                  Explore the Curriculum
+                </a>
+                <a
+                  href="#programs"
+                  class="rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/10"
+                >
+                  See All Programs
+                </a>
+              </div>
+
+              <div class="grid gap-4 sm:grid-cols-3">
+                <div class="glass rounded-3xl border border-white/10 p-5">
+                  <p class="text-3xl font-black text-white">4</p>
+                  <p class="mt-2 text-sm text-slate-300">Future-ready programs</p>
+                </div>
+                <div class="glass rounded-3xl border border-white/10 p-5">
+                  <p class="text-3xl font-black text-white">12</p>
+                  <p class="mt-2 text-sm text-slate-300">Weeks per program</p>
+                </div>
+                <div class="glass rounded-3xl border border-white/10 p-5">
+                  <p class="text-3xl font-black text-white">100%</p>
+                  <p class="mt-2 text-sm text-slate-300">Project-based learning</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="relative">
+              <div class="program-card relative rounded-[2rem] p-[1px] shadow-glow">
+                <div class="glass rounded-[2rem] border border-white/10 p-6">
+                  <div class="grid gap-4 sm:grid-cols-2">
+                    <div class="rounded-3xl bg-white/5 p-5">
+                      <p class="text-xs uppercase tracking-[0.28em] text-neon">Now loading</p>
+                      <p class="mt-3 text-xl font-bold text-white">Kid-friendly tech stack</p>
+                      <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="rounded-full bg-spark/20 px-3 py-1 text-xs font-semibold text-spark">LEGO EV3</span>
+                        <span class="rounded-full bg-sun/20 px-3 py-1 text-xs font-semibold text-sun">Python</span>
+                        <span class="rounded-full bg-pop/20 px-3 py-1 text-xs font-semibold text-pop">HTML/CSS/JS</span>
+                        <span class="rounded-full bg-neon/20 px-3 py-1 text-xs font-semibold text-neon">AI Ethics</span>
+                      </div>
+                    </div>
+                    <div class="rounded-3xl bg-gradient-to-br from-white/10 to-white/5 p-5">
+                      <p class="text-xs uppercase tracking-[0.28em] text-slate-300">Capstone focus</p>
+                      <p class="mt-3 text-xl font-bold text-white">Build real things that move, react, and think</p>
+                    </div>
+                  </div>
+
+                  <div class="mt-6 space-y-4">
+                    <div class="rounded-3xl border border-white/10 bg-slate-950/60 p-5">
+                      <div class="flex items-center justify-between">
+                        <p class="font-bold text-white">Learning Path</p>
+                        <span class="rounded-full bg-neon/15 px-3 py-1 text-xs font-semibold text-neon">Beginner Friendly</span>
+                      </div>
+                      <div class="mt-4 space-y-3">
+                        <div class="flex items-center gap-3">
+                          <span class="flex h-8 w-8 items-center justify-center rounded-full bg-spark font-black text-white">1</span>
+                          <p class="text-sm text-slate-300">Robot Mechanics & Logic</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                          <span class="flex h-8 w-8 items-center justify-center rounded-full bg-sun font-black text-slate-950">2</span>
+                          <p class="text-sm text-slate-300">Transition to Text with Python</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                          <span class="flex h-8 w-8 items-center justify-center rounded-full bg-pop font-black text-white">3</span>
+                          <p class="text-sm text-slate-300">Creating for the Web</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                          <span class="flex h-8 w-8 items-center justify-center rounded-full bg-neon font-black text-slate-950">4</span>
+                          <p class="text-sm text-slate-300">Future Tech: AI & Ethical Programming</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="grid gap-4 sm:grid-cols-3">
+                      <div class="rounded-3xl border border-white/10 bg-white/5 p-4 text-center">
+                        <p class="text-2xl font-black text-white">48</p>
+                        <p class="mt-1 text-xs uppercase tracking-[0.25em] text-slate-400">Total lessons</p>
+                      </div>
+                      <div class="rounded-3xl border border-white/10 bg-white/5 p-4 text-center">
+                        <p class="text-2xl font-black text-white">12+</p>
+                        <p class="mt-1 text-xs uppercase tracking-[0.25em] text-slate-400">Major projects</p>
+                      </div>
+                      <div class="rounded-3xl border border-white/10 bg-white/5 p-4 text-center">
+                        <p class="text-2xl font-black text-white">∞</p>
+                        <p class="mt-1 text-xs uppercase tracking-[0.25em] text-slate-400">Creativity</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="highlights" class="mx-auto max-w-7xl px-6 py-6 lg:px-8">
+          <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            <div class="glass rounded-[1.75rem] border border-white/10 p-6">
+              <p class="text-sm font-semibold text-neon">Hands-on Robotics</p>
+              <p class="mt-3 text-sm leading-7 text-slate-300">Kids program movement, sensors, and autonomy with real LEGO hardware challenges.</p>
+            </div>
+            <div class="glass rounded-[1.75rem] border border-white/10 p-6">
+              <p class="text-sm font-semibold text-sun">Code That Feels Fun</p>
+              <p class="mt-3 text-sm leading-7 text-slate-300">Python lessons use visuals, storytelling, and games instead of dry drills.</p>
+            </div>
+            <div class="glass rounded-[1.75rem] border border-white/10 p-6">
+              <p class="text-sm font-semibold text-pop">Creative Web Skills</p>
+              <p class="mt-3 text-sm leading-7 text-slate-300">Students design polished web experiences with HTML, CSS, and beginner JavaScript.</p>
+            </div>
+            <div class="glass rounded-[1.75rem] border border-white/10 p-6">
+              <p class="text-sm font-semibold text-spark">Ethical AI Thinking</p>
+              <p class="mt-3 text-sm leading-7 text-slate-300">The curriculum teaches smart, responsible use of automation, data, and machine learning.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="programs" class="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+          <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <div class="space-y-3">
+              <p class="text-sm font-semibold uppercase tracking-[0.3em] text-neon">Program lineup</p>
+              <h2 class="text-4xl font-black tracking-tight text-white">Four pathways. One exciting tech journey.</h2>
+              <p class="max-w-3xl text-slate-300">Each program is built for curious learners and ends with a meaningful capstone challenge kids can proudly show off.</p>
+            </div>
+            <a href="#explorer" class="rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
+              Jump to interactive explorer
+            </a>
+          </div>
+
+          <div id="programCards" class="mt-10 grid gap-6 lg:grid-cols-2"></div>
+        </section>
+
+        <section id="explorer" class="mx-auto max-w-7xl px-6 pb-24 lg:px-8">
+          <div class="glass rounded-[2rem] border border-white/10 p-6 md:p-8">
+            <div class="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+              <div class="space-y-3">
+                <p class="text-sm font-semibold uppercase tracking-[0.3em] text-neon">Interactive explorer</p>
+                <h2 class="text-4xl font-black tracking-tight text-white">Dive into every week of the curriculum.</h2>
+                <p class="max-w-3xl text-slate-300">
+                  Tap a program, search topics, and open any lesson to view the focus and hands-on activity.
+                </p>
+              </div>
+
+              <div class="flex w-full flex-col gap-3 sm:flex-row lg:max-w-xl">
+                <input
+                  id="searchInput"
+                  type="text"
+                  placeholder="Search: robot, turtle, flexbox, bias..."
+                  class="w-full rounded-2xl border border-white/10 bg-slate-950/70 px-4 py-3 text-sm text-white outline-none ring-0 placeholder:text-slate-500 focus:border-neon"
+                />
+                <button
+                  id="clearSearch"
+                  class="rounded-2xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+                >
+                  Clear
+                </button>
+              </div>
+            </div>
+
+            <div id="programTabs" class="mt-8 flex flex-wrap gap-3"></div>
+            <div id="monthOverview" class="mt-8 grid gap-4 md:grid-cols-3"></div>
+            <div id="weekList" class="mt-8 space-y-4"></div>
+          </div>
+        </section>
+
+        <section class="mx-auto max-w-7xl px-6 pb-24 lg:px-8">
+          <div class="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+            <div class="glass rounded-[2rem] border border-white/10 p-8">
+              <p class="text-sm font-semibold uppercase tracking-[0.3em] text-neon">What kids gain</p>
+              <h2 class="mt-4 text-3xl font-black tracking-tight text-white">Confidence, creativity, and real-world tech fluency.</h2>
+              <div class="mt-8 flex flex-wrap gap-3">
+                <span class="rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-slate-200">Problem Solving</span>
+                <span class="rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-slate-200">Debugging</span>
+                <span class="rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-slate-200">Design Thinking</span>
+                <span class="rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-slate-200">Logic & Loops</span>
+                <span class="rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-slate-200">Teamwork</span>
+                <span class="rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-slate-200">Ethical Reasoning</span>
+              </div>
+            </div>
+
+            <div class="grid gap-5 md:grid-cols-2">
+              <div class="rounded-[1.75rem] border border-white/10 bg-gradient-to-br from-spark/25 to-slate-900 p-6">
+                <p class="text-sm font-semibold text-spark">Capstones that matter</p>
+                <p class="mt-3 text-sm leading-7 text-slate-200">From autonomous maze rescue to portfolio websites and coding tournaments, the final projects feel big, exciting, and worth celebrating.</p>
+              </div>
+              <div class="rounded-[1.75rem] border border-white/10 bg-gradient-to-br from-neon/20 to-slate-900 p-6">
+                <p class="text-sm font-semibold text-neon">Built for engagement</p>
+                <p class="mt-3 text-sm leading-7 text-slate-200">Every week includes a challenge, simulation, design task, or game so kids stay active and curious instead of passive.</p>
+              </div>
+              <div class="rounded-[1.75rem] border border-white/10 bg-gradient-to-br from-pop/20 to-slate-900 p-6">
+                <p class="text-sm font-semibold text-pop">Creative + technical</p>
+                <p class="mt-3 text-sm leading-7 text-slate-200">Students move from physical robots to typed code, web experiences, and AI prototypes while building the mindset to create independently.</p>
+              </div>
+              <div class="rounded-[1.75rem] border border-white/10 bg-gradient-to-br from-sun/20 to-slate-900 p-6">
+                <p class="text-sm font-semibold text-sun">Showcase moments</p>
+                <p class="mt-3 text-sm leading-7 text-slate-200">Parents see visible outcomes through demos, medals, tournaments, and innovation pitches that make learning feel real.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" class="mx-auto max-w-7xl px-6 pb-24 lg:px-8">
+          <div class="overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-r from-spark/30 via-slate-900 to-neon/20 p-8 md:p-10">
+            <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+              <div>
+                <p class="text-sm font-semibold uppercase tracking-[0.3em] text-neon">Ready to launch?</p>
+                <h2 class="mt-4 text-4xl font-black tracking-tight text-white">Give kids a place to invent, experiment, and shine.</h2>
+                <p class="mt-4 max-w-2xl text-slate-200">
+                  This curriculum is designed to feel current, creative, and confidence-building for learners stepping into the world of robotics, coding, web creation, and AI.
+                </p>
+              </div>
+
+              <div class="glass rounded-[1.75rem] border border-white/10 p-6">
+                <p class="text-lg font-bold text-white">Program Snapshot</p>
+                <div class="mt-4 space-y-3 text-sm text-slate-300">
+                  <div class="flex items-center justify-between rounded-2xl bg-white/5 px-4 py-3">
+                    <span>Audience</span>
+                    <span class="font-semibold text-white">Kids 10+</span>
+                  </div>
+                  <div class="flex items-center justify-between rounded-2xl bg-white/5 px-4 py-3">
+                    <span>Format</span>
+                    <span class="font-semibold text-white">Hands-on + project based</span>
+                  </div>
+                  <div class="flex items-center justify-between rounded-2xl bg-white/5 px-4 py-3">
+                    <span>Topics</span>
+                    <span class="font-semibold text-white">Robotics, Python, Web, AI</span>
+                  </div>
+                </div>
+                <a
+                  href="#top"
+                  class="mt-6 inline-flex rounded-full bg-white px-5 py-3 text-sm font-bold text-slate-950 transition hover:scale-[1.02]"
+                >
+                  Back to top
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const programs = [
+        {
+          id: "robotics",
+          shortTitle: "Robot Mechanics & Logic",
+          title: "Program 1: Robot Mechanics & Logic",
+          badge: "LEGO EV3 Classroom",
+          color: "spark",
+          description:
+            "Learn loops, sensors, geometry, and conditionals by programming real robots to move, react, and solve physical challenges.",
+          goals: [
+            "Understand movement, steering, and basic geometry",
+            "Use touch, ultrasonic, and color sensors",
+            "Build autonomous behavior with logic and conditionals"
+          ],
+          capstone: "Autonomous Maze Rescue with a custom robot extension, multi-room navigation, sensors, and a celebratory finish.",
+          months: [
+            {
+              title: "Month 1: Movement & Basic Geometry",
+              summary: "Drive, turn, measure distance, and use loops to create clean repeatable motion."
+            },
+            {
+              title: "Month 2: Sensors & Real-World Interaction",
+              summary: "Use touch, ultrasonic, and color sensors to react to walls, tracks, and objects."
+            },
+            {
+              title: "Month 3: Advanced Logic & Capstone",
+              summary: "Combine conditionals and multiple sensors to make smarter, more autonomous robots."
+            }
+          ],
+          weeks: [
+            {
+              week: "Week 1",
+              title: "Introduction to the Brick",
+              topic: "Anatomy of the EV3 Brick, Large vs. Medium motors, and connecting via Bluetooth.",
+              activity: "Build a basic driving base and write code to move forward exactly 30 cm and stop."
+            },
+            {
+              week: "Week 2",
+              title: "Precision Steering and Turns",
+              topic: "Point turns vs. curve turns. Calculating wheel rotations and degrees.",
+              activity: "The Parallel Parking Challenge: program the robot to navigate backwards into a tight parking spot."
+            },
+            {
+              week: "Week 3",
+              title: "Geometry & Repeating Actions",
+              topic: "Intro to the Repeat [X] Times block.",
+              activity: "Program the robot to trace a perfect square, then an equilateral triangle, using loops to minimize code length."
+            },
+            {
+              week: "Week 4",
+              title: "The Sound and the Display",
+              topic: "Controlling the brick screen and speaker. Debugging code using visual cues.",
+              activity: "Create a custom alarm system that drives forward, flashes lights red, and plays a warning siren if blocked."
+            },
+            {
+              week: "Week 5",
+              title: "Stop! Touch & Ultrasonic Sensors",
+              topic: "Introduction to Wait Until logic. Continuous polling vs. sudden events.",
+              activity: "The Bumper Car: the robot drives until the bumper touches a wall, then reverses and spins away."
+            },
+            {
+              week: "Week 6",
+              title: "Reading the Distance",
+              topic: "Using the Ultrasonic Sensor to measure centimeters.",
+              activity: "The Safe Distance Escort: follow a hand or moving box while maintaining a precise distance of 15 cm."
+            },
+            {
+              week: "Week 7",
+              title: "The World in Color",
+              topic: "Ambient light vs. reflected light intensity using the Color Sensor.",
+              activity: "Traffic Light Simulator: react instantly with stop, slow down, or go when passing red, yellow, or green cards."
+            },
+            {
+              week: "Week 8",
+              title: "Basic Line Following",
+              topic: "Basic tracking logic: Am I on the line or off the line?",
+              activity: "Code the robot to autonomously follow a looping black electrical tape track on the floor."
+            },
+            {
+              week: "Week 9",
+              title: "Switches & Conditionals",
+              topic: "If/Then/Else decisions based on real sensor input.",
+              activity: "At a fork in the road, the robot checks a color tile and decides whether to turn left or right."
+            },
+            {
+              week: "Week 10",
+              title: "Combining Multiple Sensors",
+              topic: "Line following while constantly checking the ultrasonic sensor for obstacles.",
+              activity: "The Delivery Robot follows a track to a destination but halts if a pedestrian steps in front."
+            },
+            {
+              week: "Weeks 11-12",
+              title: "Capstone: Autonomous Maze Rescue",
+              topic: "Students design a custom extension and program the robot to navigate a multi-room maze entirely on its own.",
+              activity: "Use a color sensor to identify zones and an ultrasonic sensor to avoid walls, ending with a celebratory sound effect."
+            }
+          ]
+        },
+        {
+          id: "python",
+          shortTitle: "Transition to Text",
+          title: "Program 2: Transition to Text",
+          badge: "Basic Python",
+          color: "sun",
+          description:
+            "Help kids move from drag-and-drop blocks to typed Python by making visuals, mini-games, and playful text projects.",
+          goals: [
+            "Build confidence with syntax and debugging",
+            "Use variables, loops, conditionals, and randomness",
+            "Organize game logic with lists and functions"
+          ],
+          capstone: "Rock, Paper, Scissors Pro or Guess the Number with score tracking, input validation, and reusable functions.",
+          months: [
+            {
+              title: "Month 1: Drawing with Code & Variables",
+              summary: "Learn syntax rules and create visual projects with turtle plus beginner-friendly variable use."
+            },
+            {
+              title: "Month 2: Logic, Decisions, & Dynamic Play",
+              summary: "Use conditions, while loops, and randomness to make programs feel interactive."
+            },
+            {
+              title: "Month 3: Reusable Code & Game Engineering",
+              summary: "Work with lists and functions to build cleaner code and full mini-games."
+            }
+          ],
+          weeks: [
+            {
+              week: "Week 1",
+              title: "Text-Based Syntax Rules",
+              topic: "Typing accuracy, indentation, case sensitivity, and debugging a SyntaxError.",
+              activity: "Import turtle and command a digital canvas cursor to draw initials or a smiley face."
+            },
+            {
+              week: "Week 2",
+              title: "Variables: Storing Information",
+              topic: "What variables are and how to store strings vs. integers.",
+              activity: "Create a Python Mad Libs generator that asks for a noun, verb, and color, then prints a funny story."
+            },
+            {
+              week: "Week 3",
+              title: "Changing Variables Dynamically",
+              topic: "Math operators in code and altering variable data on the fly.",
+              activity: "Build a basic Score Tracker where points are added or subtracted based on simulated event prompts."
+            },
+            {
+              week: "Week 4",
+              title: "Loop Controls",
+              topic: "Translating the LEGO Repeat block into Python for i in range() syntax.",
+              activity: "Draw a complex geometric spiral pattern by increasing the turtle line length on every iteration."
+            },
+            {
+              week: "Week 5",
+              title: "Conditional Logic",
+              topic: "Comparison operators with if / else decisions.",
+              activity: "The Digital Bouncer asks the user's age and decides if they are old enough to ride a virtual roller coaster."
+            },
+            {
+              week: "Week 6",
+              title: "Complex Decisions",
+              topic: "Using elif plus logical operators like and / or and handling unexpected input.",
+              activity: "Build a text-based Choose Your Own Adventure mini-game with branching narrative paths."
+            },
+            {
+              week: "Week 7",
+              title: "Indefinite Loops",
+              topic: "Running code with while loops until a condition or break is hit.",
+              activity: "Create a Password Locker terminal that keeps prompting the user until the correct secret password is entered."
+            },
+            {
+              week: "Week 8",
+              title: "Importing Randomness",
+              topic: "Using external libraries and Python's random module.",
+              activity: "The Magic 8-Ball gives a random fortune phrase whenever the user asks a question."
+            },
+            {
+              week: "Week 9",
+              title: "Intro to Lists",
+              topic: "Store multiple items in one variable and access them by index.",
+              activity: "Create an interactive Inventory Bag where items can be appended or removed from the command line."
+            },
+            {
+              week: "Week 10",
+              title: "Functions: Your Custom Blocks",
+              topic: "Defining reusable code blocks with def and passing arguments.",
+              activity: "Code functions to draw a roof, door, and window, then combine them to draw a whole neighborhood."
+            },
+            {
+              week: "Weeks 11-12",
+              title: "Capstone Game Project",
+              topic: "Build a full interactive game against the computer with clean code structure.",
+              activity: "Create Rock, Paper, Scissors Pro or Guess the Number with scores, validation, functions, and a grand winner."
+            }
+          ]
+        },
+        {
+          id: "web",
+          shortTitle: "Creating for the Web",
+          title: "Program 3: Creating for the Web",
+          badge: "HTML, CSS & Intro to JS",
+          color: "pop",
+          description:
+            "Shift students from web consumers to web creators as they design structured pages, modern layouts, and interactive features.",
+          goals: [
+            "Understand how browsers load and display pages",
+            "Create structure with HTML and style with CSS",
+            "Add JavaScript interactivity through DOM updates"
+          ],
+          capstone: "Interactive personal portfolio or digital storybook with strong structure, clean styling, and a custom JS widget.",
+          months: [
+            {
+              title: "Month 1: Building Structure",
+              summary: "Create webpages with headings, paragraphs, images, links, and strong content hierarchy."
+            },
+            {
+              title: "Month 2: Designing & Styling",
+              summary: "Use selectors, classes, the box model, and flexbox to design polished layouts."
+            },
+            {
+              title: "Month 3: Bringing It to Life",
+              summary: "Use beginner JavaScript to respond to clicks and dynamically change the page."
+            }
+          ],
+          weeks: [
+            {
+              week: "Week 1",
+              title: "How the Web Works",
+              topic: "Browsers, servers, local files, and the basic blueprint of a webpage.",
+              activity: "Write your first index.html file and run it locally to display a Hello World message."
+            },
+            {
+              week: "Week 2",
+              title: "Core Layout Tags",
+              topic: "Using headings, paragraphs, dividers, and line breaks.",
+              activity: "Build a basic Wikipedia-style text article about a favorite game or historical topic."
+            },
+            {
+              week: "Week 3",
+              title: "Visual Elements & Navigation",
+              topic: "Working with href links, src images, local paths, and web URLs.",
+              activity: "Add external images to the article page and link out to official resources safely."
+            },
+            {
+              week: "Week 4",
+              title: "Lists & Structural Hierarchies",
+              topic: "Ordered and unordered lists, nesting, and clearer content structure.",
+              activity: "Create a recipe page or gaming ranking tier-list using styled lists and image blocks."
+            },
+            {
+              week: "Week 5",
+              title: "Intro to CSS Styles",
+              topic: "Color theory on the web, inline styling, internal stylesheets, and font families.",
+              activity: "Transform a plain recipe page into a vibrant, modern layout using color themes and typography."
+            },
+            {
+              week: "Week 6",
+              title: "Selectors, Classes, and IDs",
+              topic: "Apply different style rules to specific elements without changing everything.",
+              activity: "Build a grid of Character Cards where different cards change color styles based on classes."
+            },
+            {
+              week: "Week 7",
+              title: "The CSS Box Model",
+              topic: "Understand padding, borders, margins, and widths.",
+              activity: "Construct neat clickable buttons that expand smoothly on hover and align properly in a header."
+            },
+            {
+              week: "Week 8",
+              title: "Modern Layouts with Flexbox",
+              topic: "Align items in rows or columns without breaking the layout.",
+              activity: "Build a clean navigation bar layout with a logo on the left and links on the right."
+            },
+            {
+              week: "Week 9",
+              title: "Linking JavaScript to Web Elements",
+              topic: "Understand the DOM and use JavaScript to detect button clicks.",
+              activity: "Add an HTML button that shows a pop-up welcome alert box when clicked."
+            },
+            {
+              week: "Week 10",
+              title: "Dynamic Content Manipulation",
+              topic: "Change element properties like inner text or toggle styles with JavaScript.",
+              activity: "Build a Dark Mode / Light Mode toggle that flips the page background on click."
+            },
+            {
+              week: "Weeks 11-12",
+              title: "Capstone Web Project",
+              topic: "Create a multi-section web app showcasing all learned skills.",
+              activity: "Build an interactive personal portfolio or digital storybook with images, lists, layout, and a custom JS widget."
+            }
+          ]
+        },
+        {
+          id: "ai",
+          shortTitle: "Future Tech",
+          title: "Program 4: Future Tech",
+          badge: "AI & Ethical Programming",
+          color: "neon",
+          description:
+            "Teach kids how AI works, where it fails, and how to use automation responsibly through experiments, analysis, and invention.",
+          goals: [
+            "Understand AI vs. traditional coding",
+            "Explore training data, bias, and media literacy",
+            "Design responsible tech-for-good prototypes"
+          ],
+          capstone: "Tech for Good innovation pitch and prototype with privacy protection, anti-bias thinking, and social impact.",
+          months: [
+            {
+              title: "Month 1: Training Models & Understanding Data",
+              summary: "Explore what machine learning is, how data shapes outcomes, and why bad data causes bad results."
+            },
+            {
+              title: "Month 2: Responsible Implementation & Co-Coding",
+              summary: "Learn to use AI tools critically while understanding bias, integrity, and misinformation."
+            },
+            {
+              title: "Month 3: Tech for Good Innovation",
+              summary: "Connect AI ideas to practical apps, cybersecurity, privacy, and ethical design."
+            }
+          ],
+          weeks: [
+            {
+              week: "Week 1",
+              title: "Algorithmic Logic vs Machine Learning",
+              topic: "What makes AI different from traditional coding: rules vs. pattern recognition.",
+              activity: "Play with visual sorting experiments to show how algorithms process heavy information."
+            },
+            {
+              week: "Week 2",
+              title: "Data Collections & Training Sets",
+              topic: "Garbage In, Garbage Out and why models need large datasets.",
+              activity: "Use Google's Teachable Machine to train a custom computer vision model that recognizes hand signs or toys."
+            },
+            {
+              week: "Week 3",
+              title: "Speech & Sound Processing",
+              topic: "Audio engineering basics in AI and how voice assistants process sound patterns.",
+              activity: "Train a simple sound classifier to change the color of an on-screen object when you clap twice versus snap your fingers."
+            },
+            {
+              week: "Week 4",
+              title: "The Core Limitations of Data Models",
+              topic: "Why AI models hallucinate or get confused and how weak labeling hurts performance.",
+              activity: "Run an optimization experiment showing how poorly labeled data can ruin an accurate machine-learning model."
+            },
+            {
+              week: "Week 5",
+              title: "Prompt Engineering for Coders",
+              topic: "Using LLMs effectively for code generation vs. code comprehension.",
+              activity: "Use broken Python scripts and teach students how to ask an AI assistant why the error happens instead of just asking for answers."
+            },
+            {
+              week: "Week 6",
+              title: "The Copy-Paste Trap",
+              topic: "Why running code you do not understand is dangerous.",
+              activity: "Reverse Engineering Challenge: students take an AI-generated script and explain what every line does."
+            },
+            {
+              week: "Week 7",
+              title: "Algorithmic Bias & Fairness",
+              topic: "How non-diverse training data can exclude people or embed bias.",
+              activity: "Run a simulation that highlights how historical bias can slip into modern programs."
+            },
+            {
+              week: "Week 8",
+              title: "Deepfakes, Media Literacy, & The Web",
+              topic: "How generative image and video tools work and how to critically analyze media.",
+              activity: "Play the Tech Detective Game to inspect claims, images, and clips for subtle AI tells."
+            },
+            {
+              week: "Week 9",
+              title: "Smart Apps & APIs",
+              topic: "How programs request intelligence logic from cloud services.",
+              activity: "Run a visual program that sends text to a sentiment analyzer to judge if a comment is happy, sad, or neutral."
+            },
+            {
+              week: "Week 10",
+              title: "Cybersecurity & Digital Footprints",
+              topic: "Data privacy, password safety, and how companies track digital behavior.",
+              activity: "Design an encrypted pass-key challenge to learn how difficult it is to secure data from brute-force scripts."
+            },
+            {
+              week: "Weeks 11-12",
+              title: "Capstone: Tech for Good Innovation Pitch",
+              topic: "Students build a small prototype and explain privacy and fairness decisions.",
+              activity: "Pick a real-world challenge and create a prototype plus an ethics layout covering user data protection and bias prevention."
+            }
+          ]
+        }
+      ];
+
+      const colorClasses = {
+        spark: {
+          text: "text-spark",
+          bg: "bg-spark/15",
+          border: "border-spark/30",
+          button: "from-spark to-neon"
+        },
+        sun: {
+          text: "text-sun",
+          bg: "bg-sun/15",
+          border: "border-sun/30",
+          button: "from-sun to-pop"
+        },
+        pop: {
+          text: "text-pop",
+          bg: "bg-pop/15",
+          border: "border-pop/30",
+          button: "from-pop to-spark"
+        },
+        neon: {
+          text: "text-neon",
+          bg: "bg-neon/15",
+          border: "border-neon/30",
+          button: "from-neon to-spark"
+        }
+      };
+
+      let activeProgramId = programs[0].id;
+
+      const menuButton = document.getElementById("menuButton");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const programCards = document.getElementById("programCards");
+      const programTabs = document.getElementById("programTabs");
+      const monthOverview = document.getElementById("monthOverview");
+      const weekList = document.getElementById("weekList");
+      const searchInput = document.getElementById("searchInput");
+      const clearSearch = document.getElementById("clearSearch");
+
+      menuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => mobileMenu.classList.add("hidden"));
+      });
+
+      function renderProgramCards() {
+        programCards.innerHTML = programs
+          .map((program) => {
+            const colors = colorClasses[program.color];
+            return `
+              <article class="glass rounded-[2rem] border border-white/10 p-7 transition hover:-translate-y-1 hover:border-white/20">
+                <div class="flex flex-wrap items-start justify-between gap-4">
+                  <div>
+                    <span class="inline-flex rounded-full ${colors.bg} ${colors.text} px-3 py-1 text-xs font-bold uppercase tracking-[0.25em]">${program.badge}</span>
+                    <h3 class="mt-4 text-2xl font-black text-white">${program.title}</h3>
+                  </div>
+                  <button
+                    data-program="${program.id}"
+                    class="jump-to-program rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/10"
+                  >
+                    Open explorer
+                  </button>
+                </div>
+
+                <p class="mt-4 text-sm leading-7 text-slate-300">${program.description}</p>
+
+                <div class="mt-6 flex flex-wrap gap-2">
+                  ${program.goals
+                    .map(
+                      (goal) =>
+                        `<span class="rounded-full border border-white/10 bg-slate-950/50 px-3 py-2 text-xs font-medium text-slate-200">${goal}</span>`
+                    )
+                    .join("")}
+                </div>
+
+                <div class="mt-6 rounded-3xl border border-white/10 bg-slate-950/60 p-5">
+                  <p class="text-xs uppercase tracking-[0.25em] text-slate-400">Capstone</p>
+                  <p class="mt-2 text-sm leading-7 text-white">${program.capstone}</p>
+                </div>
+              </article>
+            `;
+          })
+          .join("");
+
+        document.querySelectorAll(".jump-to-program").forEach((button) => {
+          button.addEventListener("click", () => {
+            activeProgramId = button.dataset.program;
+            renderExplorer();
+            document.getElementById("explorer").scrollIntoView({ behavior: "smooth" });
+          });
+        });
+      }
+
+      function renderTabs() {
+        programTabs.innerHTML = programs
+          .map((program) => {
+            const isActive = activeProgramId === program.id;
+            const colors = colorClasses[program.color];
+
+            return `
+              <button
+                data-tab="${program.id}"
+                class="program-tab rounded-full border px-4 py-3 text-sm font-semibold transition ${
+                  isActive
+                    ? `${colors.bg} ${colors.text} ${colors.border}`
+                    : "border-white/10 bg-white/5 text-slate-300 hover:bg-white/10"
+                }"
+              >
+                ${program.shortTitle}
+              </button>
+            `;
+          })
+          .join("");
+
+        document.querySelectorAll(".program-tab").forEach((button) => {
+          button.addEventListener("click", () => {
+            activeProgramId = button.dataset.tab;
+            renderExplorer();
+          });
+        });
+      }
+
+      function renderExplorer() {
+        renderTabs();
+
+        const program = programs.find((entry) => entry.id === activeProgramId);
+        const query = searchInput.value.trim().toLowerCase();
+        const colors = colorClasses[program.color];
+
+        monthOverview.innerHTML = program.months
+          .map(
+            (month, index) => `
+              <div class="rounded-[1.5rem] border border-white/10 bg-slate-950/60 p-5">
+                <div class="flex items-center gap-3">
+                  <span class="flex h-10 w-10 items-center justify-center rounded-full ${colors.bg} ${colors.text} font-black">${index + 1}</span>
+                  <p class="font-bold text-white">${month.title}</p>
+                </div>
+                <p class="mt-4 text-sm leading-7 text-slate-300">${month.summary}</p>
+              </div>
+            `
+          )
+          .join("");
+
+        const filteredWeeks = program.weeks.filter((lesson) => {
+          if (!query) return true;
+          const haystack = `${lesson.week} ${lesson.title} ${lesson.topic} ${lesson.activity}`.toLowerCase();
+          return haystack.includes(query);
+        });
+
+        if (!filteredWeeks.length) {
+          weekList.innerHTML = `
+            <div class="rounded-[1.5rem] border border-dashed border-white/15 bg-slate-950/50 p-8 text-center">
+              <p class="text-lg font-bold text-white">No matching lessons found.</p>
+              <p class="mt-2 text-sm text-slate-400">Try another keyword like robot, loops, dark mode, or fairness.</p>
+            </div>
+          `;
+          return;
+        }
+
+        weekList.innerHTML = filteredWeeks
+          .map(
+            (lesson, index) => `
+              <details class="group overflow-hidden rounded-[1.5rem] border border-white/10 bg-slate-950/55 open:border-white/20">
+                <summary class="flex cursor-pointer list-none items-center justify-between gap-4 p-5">
+                  <div>
+                    <div class="flex flex-wrap items-center gap-3">
+                      <span class="rounded-full ${colors.bg} px-3 py-1 text-xs font-bold ${colors.text}">${lesson.week}</span>
+                      <span class="text-xs uppercase tracking-[0.25em] text-slate-500">Lesson ${index + 1}</span>
+                    </div>
+                    <h3 class="mt-3 text-xl font-bold text-white">${lesson.title}</h3>
+                  </div>
+                  <span class="rounded-full border border-white/10 px-4 py-2 text-xs font-semibold text-slate-300 transition group-open:rotate-180">▼</span>
+                </summary>
+                <div class="border-t border-white/10 px-5 py-5">
+                  <div class="grid gap-4 md:grid-cols-2">
+                    <div class="rounded-3xl bg-white/5 p-5">
+                      <p class="text-xs uppercase tracking-[0.25em] text-slate-400">Topic</p>
+                      <p class="mt-3 text-sm leading-7 text-slate-200">${lesson.topic}</p>
+                    </div>
+                    <div class="rounded-3xl bg-white/5 p-5">
+                      <p class="text-xs uppercase tracking-[0.25em] text-slate-400">Activity</p>
+                      <p class="mt-3 text-sm leading-7 text-slate-200">${lesson.activity}</p>
+                    </div>
+                  </div>
+                </div>
+              </details>
+            `
+          )
+          .join("");
+      }
+
+      searchInput.addEventListener("input", renderExplorer);
+      clearSearch.addEventListener("click", () => {
+        searchInput.value = "";
+        renderExplorer();
+        searchInput.focus();
+      });
+
+      renderProgramCards();
+      renderExplorer();
+    </script>
+  </body>
+</html>
