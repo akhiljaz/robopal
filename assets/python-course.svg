@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Python course illustration</title>
+  <desc id="desc">Colorful illustration representing beginner Python coding with turtle graphics and game logic.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#312e81"/>
+      <stop offset="50%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fef3c7"/>
+      <stop offset="100%" stop-color="#fde68a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <circle cx="180" cy="120" r="90" fill="#ffffff" fill-opacity=".09"/>
+  <circle cx="1050" cy="160" r="120" fill="#14b8a6" fill-opacity=".18"/>
+  <circle cx="980" cy="640" r="150" fill="#f59e0b" fill-opacity=".18"/>
+  <rect x="150" y="160" width="900" height="500" rx="36" fill="#0f172a" fill-opacity=".88" stroke="#ffffff" stroke-opacity=".16"/>
+  <rect x="190" y="205" width="820" height="380" rx="22" fill="url(#screen)"/>
+  <rect x="235" y="255" width="220" height="22" rx="11" fill="#4338ca"/>
+  <rect x="235" y="300" width="320" height="18" rx="9" fill="#7c3aed"/>
+  <rect x="235" y="334" width="280" height="18" rx="9" fill="#0f766e"/>
+  <rect x="235" y="368" width="360" height="18" rx="9" fill="#ec4899"/>
+  <rect x="235" y="402" width="300" height="18" rx="9" fill="#f59e0b"/>
+  <path d="M790 314c62-73 156 16 107 84-15 21-42 30-69 28h-73c-31 0-56-25-56-56 0-31 25-56 56-56h35z" fill="#3776ab"/>
+  <path d="M770 474c-62 73-156-16-107-84 15-21 42-30 69-30h73c31 0 56 25 56 56 0 32-25 58-56 58h-35z" fill="#ffd43b"/>
+  <circle cx="823" cy="338" r="9" fill="#ffffff"/>
+  <circle cx="736" cy="461" r="9" fill="#4338ca"/>
+  <path d="M655 520c52-110 149-139 212-118-8 41-36 104-84 137-40 29-86 35-128 27z" fill="#14b8a6"/>
+  <circle cx="711" cy="545" r="11" fill="#0f172a"/>
+  <circle cx="782" cy="507" r="8" fill="#0f172a"/>
+  <path d="M802 525c21 15 48 18 76 14" stroke="#0f172a" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <text x="150" y="740" fill="#ffffff" font-size="54" font-family="Arial, Helvetica, sans-serif" font-weight="700">Python Coding Adventures</text>
+</svg>

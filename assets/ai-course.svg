@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">AI course illustration</title>
+  <desc id="desc">Colorful friendly robot and shield illustration representing AI, ethics, and future technology.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="50%" stop-color="#1d4ed8"/>
+      <stop offset="100%" stop-color="#14b8a6"/>
+    </linearGradient>
+    <linearGradient id="robot" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e0f2fe"/>
+      <stop offset="100%" stop-color="#bfdbfe"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <circle cx="200" cy="130" r="95" fill="#ec4899" fill-opacity=".2"/>
+  <circle cx="1030" cy="620" r="155" fill="#f59e0b" fill-opacity=".14"/>
+  <path d="M820 180c108 0 196 88 196 196s-88 196-196 196-196-88-196-196 88-196 196-196z" fill="#ffffff" fill-opacity=".06"/>
+  <rect x="220" y="230" width="380" height="310" rx="42" fill="url(#robot)" stroke="#ffffff" stroke-opacity=".2"/>
+  <rect x="270" y="180" width="280" height="90" rx="32" fill="#dbeafe"/>
+  <circle cx="340" cy="358" r="34" fill="#0f172a"/>
+  <circle cx="480" cy="358" r="34" fill="#0f172a"/>
+  <circle cx="340" cy="358" r="12" fill="#22d3ee"/>
+  <circle cx="480" cy="358" r="12" fill="#22d3ee"/>
+  <path d="M350 454c47 34 108 34 155 0" stroke="#0f172a" stroke-width="14" fill="none" stroke-linecap="round"/>
+  <rect x="302" y="575" width="215" height="26" rx="13" fill="#a855f7"/>
+  <rect x="352" y="140" width="20" height="60" rx="10" fill="#f59e0b"/>
+  <circle cx="362" cy="118" r="24" fill="#f59e0b"/>
+  <path d="M808 248l132 46v101c0 92-56 173-132 206-76-33-132-114-132-206V294l132-46z" fill="#f8fafc" fill-opacity=".94"/>
+  <path d="M808 302l86 28v63c0 57-33 107-86 133-53-26-86-76-86-133v-63l86-28z" fill="#14b8a6"/>
+  <path d="M768 388l31 31 57-70" fill="none" stroke="#ffffff" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="150" y="740" fill="#ffffff" font-size="54" font-family="Arial, Helvetica, sans-serif" font-weight="700">Future Tech &amp; AI Ethics</text>
+</svg>

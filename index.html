@@ -14,14 +14,14 @@
         theme: {
           extend: {
             colors: {
-              spark: "#E5E7EB",
-              neon: "#CBD5E1",
-              sun: "#94A3B8",
-              pop: "#64748B",
+              spark: "#7C3AED",
+              neon: "#14B8A6",
+              sun: "#F59E0B",
+              pop: "#EC4899",
               ink: "#111827"
             },
             boxShadow: {
-              glow: "0 0 0 1px rgba(255,255,255,0.08), 0 24px 80px rgba(15,23,42,0.28)"
+              glow: "0 0 0 1px rgba(255,255,255,0.08), 0 24px 80px rgba(124,58,237,0.22)"
             },
             backgroundImage: {
               grid: "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.08) 1px, transparent 0)"
@@ -37,8 +37,9 @@
 
       body {
         background:
-          radial-gradient(circle at top left, rgba(148, 163, 184, 0.14), transparent 30%),
-          radial-gradient(circle at top right, rgba(203, 213, 225, 0.12), transparent 28%),
+          radial-gradient(circle at top left, rgba(124, 58, 237, 0.34), transparent 30%),
+          radial-gradient(circle at top right, rgba(20, 184, 166, 0.24), transparent 28%),
+          radial-gradient(circle at bottom center, rgba(236, 72, 153, 0.16), transparent 24%),
           linear-gradient(180deg, #111827 0%, #0f172a 42%, #020617 100%);
       }
 
@@ -52,7 +53,7 @@
         position: absolute;
         inset: -1px;
         border-radius: 1.5rem;
-        background: linear-gradient(135deg, rgba(229, 231, 235, 0.22), rgba(148, 163, 184, 0.18), rgba(100, 116, 139, 0.18));
+        background: linear-gradient(135deg, rgba(124, 58, 237, 0.45), rgba(20, 184, 166, 0.3), rgba(245, 158, 11, 0.24));
         z-index: -1;
       }
 
@@ -171,14 +172,14 @@
                   <div class="grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
                     <div class="media-card rounded-[1.75rem] border border-white/10">
                       <img
-                        src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=80"
-                        alt="Students working together in a modern classroom"
+                        src="assets/ev3-gyro-boy.jpg"
+                        alt="LEGO Mindstorms EV3 Gyro Boy robot"
                         class="h-full min-h-[280px] w-full object-cover"
                       />
                       <div class="media-overlay absolute inset-0 flex items-end p-5">
                         <div>
-                          <p class="text-xs uppercase tracking-[0.28em] text-neon">Modern STEM learning</p>
-                          <p class="mt-2 text-2xl font-black text-white">Project-based sessions kids can see, build, and share.</p>
+                          <p class="text-xs uppercase tracking-[0.28em] text-neon">LEGO EV3 adventures</p>
+                          <p class="mt-2 text-2xl font-black text-white">Build real robots, test crazy ideas, and watch code come alive.</p>
                         </div>
                       </div>
                     </div>
@@ -197,12 +198,12 @@
 
                       <div class="media-card rounded-3xl border border-white/10">
                         <img
-                          src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80"
-                          alt="Students learning on laptops"
+                          src="assets/ev3-box-art.png"
+                          alt="LEGO Mindstorms EV3 box art"
                           class="h-40 w-full object-cover"
                         />
                         <div class="media-overlay absolute inset-0 flex items-end p-5">
-                          <p class="text-lg font-bold text-white">From blocks to text to full websites.</p>
+                          <p class="text-lg font-bold text-white">Code, build, race, rescue, and invent with EV3.</p>
                         </div>
                       </div>
                     </div>
@@ -253,6 +254,9 @@
               </div>
             </div>
           </div>
+          <p class="mt-4 text-xs text-slate-400">
+            EV3 image credits: Gyro Boy photo by Klaus-Dieter Keller via Wikimedia Commons, and LEGO Mindstorms EV3 box art via Wikipedia.
+          </p>
         </section>
 
         <section id="highlights" class="mx-auto max-w-7xl px-6 py-6 lg:px-8">
@@ -290,15 +294,15 @@
           <div class="grid gap-6 lg:grid-cols-[1.1fr_0.9fr_0.9fr]">
             <article class="media-card rounded-[2rem] border border-white/10 bg-slate-950/50">
               <img
-                src="https://images.unsplash.com/photo-1535378917042-10a22c95931a?auto=format&fit=crop&w=1400&q=80"
-                alt="Robotics equipment and technology workspace"
+                src="assets/ev3-gyro-boy.jpg"
+                alt="LEGO Mindstorms EV3 Gyro Boy robot"
                 class="h-[420px] w-full object-cover"
                 loading="lazy"
               />
               <div class="media-overlay absolute inset-0 flex items-end p-7">
                 <div>
-                  <p class="text-xs uppercase tracking-[0.28em] text-neon">Robotics</p>
-                  <h3 class="mt-2 text-2xl font-black text-white">Build, test, and refine physical systems with real sensors and movement.</h3>
+                  <p class="text-xs uppercase tracking-[0.28em] text-neon">LEGO EV3 robotics</p>
+                  <h3 class="mt-2 text-2xl font-black text-white">Program balancing robots, rescue bots, and sensor-powered machines.</h3>
                 </div>
               </div>
             </article>
@@ -306,8 +310,8 @@
             <div class="grid gap-6">
               <article class="media-card rounded-[2rem] border border-white/10 bg-slate-950/50">
                 <img
-                  src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80"
-                  alt="Web development setup with code on a monitor"
+                  src="assets/web-course.svg"
+                  alt="Colorful web design illustration"
                   class="h-[198px] w-full object-cover"
                   loading="lazy"
                 />
@@ -331,9 +335,9 @@
             </div>
 
             <article class="media-card rounded-[2rem] border border-white/10 bg-slate-950/50">
-              <img
-                src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80"
-                alt="Futuristic robot representing AI learning"
+                <img
+                  src="assets/ai-course.svg"
+                  alt="Friendly AI and ethics illustration"
                 class="h-[420px] w-full object-cover"
                 loading="lazy"
               />
@@ -611,8 +615,8 @@
           title: "Program 1: Robot Mechanics & Logic",
           badge: "LEGO EV3 Classroom",
           color: "spark",
-          image: "https://images.unsplash.com/photo-1535378917042-10a22c95931a?auto=format&fit=crop&w=1200&q=80",
-          imageAlt: "Robotics workspace and technology components",
+          image: "assets/ev3-gyro-boy.jpg",
+          imageAlt: "LEGO Mindstorms EV3 Gyro Boy robot",
           pdf: "downloads/robot-mechanics-and-logic-curriculum.pdf",
           description:
             "Learn loops, sensors, geometry, and conditionals by programming real robots to move, react, and solve physical challenges.",
@@ -726,8 +730,8 @@
           title: "Program 2: Transition to Text",
           badge: "Basic Python",
           color: "sun",
-          image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80",
-          imageAlt: "Programming code displayed on a laptop screen",
+          image: "assets/python-course.svg",
+          imageAlt: "Colorful beginner Python coding illustration",
           pdf: "downloads/transition-to-text-python-curriculum.pdf",
           description:
             "Help kids move from drag-and-drop blocks to typed Python by making visuals, mini-games, and playful text projects.",
@@ -841,8 +845,8 @@
           title: "Program 3: Creating for the Web",
           badge: "HTML, CSS & Intro to JS",
           color: "pop",
-          image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
-          imageAlt: "Web design and coding setup on a desktop monitor",
+          image: "assets/web-course.svg",
+          imageAlt: "Colorful web design and coding illustration",
           pdf: "downloads/creating-for-the-web-curriculum.pdf",
           description:
             "Shift students from web consumers to web creators as they design structured pages, modern layouts, and interactive features.",
@@ -956,8 +960,8 @@
           title: "Program 4: Future Tech",
           badge: "AI & Ethical Programming",
           color: "neon",
-          image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
-          imageAlt: "Robot representing artificial intelligence and future technology",
+          image: "assets/ai-course.svg",
+          imageAlt: "Friendly AI and ethics illustration",
           pdf: "downloads/future-tech-ai-ethical-programming-curriculum.pdf",
           description:
             "Teach kids how AI works, where it fails, and how to use automation responsibly through experiments, analysis, and invention.",
