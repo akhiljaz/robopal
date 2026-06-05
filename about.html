@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About RoboPal Academy</title>
+    <meta
+      name="description"
+      content="Learn about RoboPal Academy, its experienced software developer leadership, ethical programming focus, LEGO League coaching, and highly qualified trainers."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              spark: "#7C3AED",
+              neon: "#14B8A6",
+              sun: "#F59E0B",
+              pop: "#EC4899",
+              ink: "#111827"
+            },
+            boxShadow: {
+              glow: "0 0 0 1px rgba(255,255,255,0.08), 0 24px 80px rgba(124,58,237,0.22)"
+            },
+            backgroundImage: {
+              grid: "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.08) 1px, transparent 0)"
+            }
+          }
+        }
+      };
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background:
+          radial-gradient(circle at top left, rgba(124, 58, 237, 0.34), transparent 30%),
+          radial-gradient(circle at top right, rgba(20, 184, 166, 0.24), transparent 28%),
+          radial-gradient(circle at bottom center, rgba(236, 72, 153, 0.16), transparent 24%),
+          linear-gradient(180deg, #111827 0%, #0f172a 42%, #020617 100%);
+      }
+
+      .glass {
+        background: rgba(17, 24, 39, 0.72);
+        backdrop-filter: blur(16px);
+      }
+    </style>
+  </head>
+  <body class="min-h-screen text-slate-100 selection:bg-neon/30 selection:text-white">
+    <div class="bg-grid bg-[size:24px_24px]">
+      <header class="sticky top-0 z-40 border-b border-white/10 bg-slate-950/65 backdrop-blur-xl">
+        <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+          <a href="index.html" class="flex items-center gap-3">
+            <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-spark to-neon text-lg font-black text-slate-950">
+              RP
+            </div>
+            <div>
+              <p class="text-lg font-extrabold tracking-wide">RoboPal Academy</p>
+              <p class="text-xs uppercase tracking-[0.3em] text-neon">About Us</p>
+            </div>
+          </a>
+
+          <div class="hidden items-center gap-8 md:flex">
+            <a href="index.html" class="text-sm text-slate-300 transition hover:text-white">Home</a>
+            <a href="index.html#programs" class="text-sm text-slate-300 transition hover:text-white">Programs</a>
+            <a href="index.html#downloads" class="text-sm text-slate-300 transition hover:text-white">Downloads</a>
+            <a href="index.html#contact" class="rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/20">Contact</a>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <section class="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-24">
+          <div class="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+            <div class="space-y-6">
+              <span class="inline-flex items-center gap-2 rounded-full border border-neon/30 bg-neon/10 px-4 py-2 text-sm font-semibold text-neon">
+                <span class="h-2.5 w-2.5 rounded-full bg-neon"></span>
+                Trusted mentors for young builders
+              </span>
+              <h1 class="text-5xl font-black leading-tight tracking-tight text-white md:text-6xl">
+                About RoboPal Academy
+              </h1>
+              <p class="max-w-3xl text-lg leading-8 text-slate-300">
+                RoboPal Academy is built for families who want more than screen time. We combine strong technical foundations,
+                ethical thinking, and hands-on project work to help kids grow into confident creators.
+              </p>
+              <div class="flex flex-wrap gap-4">
+                <a
+                  href="index.html#contact"
+                  class="rounded-full bg-gradient-to-r from-spark to-neon px-6 py-3 text-sm font-bold text-slate-950 shadow-glow transition hover:scale-[1.02]"
+                >
+                  Talk to Our Team
+                </a>
+                <a
+                  href="index.html"
+                  class="rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/10"
+                >
+                  Back to Home
+                </a>
+              </div>
+            </div>
+
+            <div class="glass rounded-[2rem] border border-white/10 p-8">
+              <p class="text-sm font-semibold uppercase tracking-[0.3em] text-neon">Why parents choose us</p>
+              <div class="mt-6 space-y-4">
+                <div class="rounded-3xl border border-white/10 bg-white/5 p-5">
+                  <p class="text-lg font-bold text-white">Experienced software developer leadership</p>
+                  <p class="mt-2 text-sm leading-7 text-slate-300">
+                    Our program direction is shaped by real software development experience, helping students learn practical,
+                    modern technology skills in a structured way.
+                  </p>
+                </div>
+                <div class="rounded-3xl border border-white/10 bg-white/5 p-5">
+                  <p class="text-lg font-bold text-white">Ethical programming focus</p>
+                  <p class="mt-2 text-sm leading-7 text-slate-300">
+                    We teach kids not only how to code, but how to think responsibly about data, automation, AI, fairness,
+                    and digital citizenship.
+                  </p>
+                </div>
+                <div class="rounded-3xl border border-white/10 bg-white/5 p-5">
+                  <p class="text-lg font-bold text-white">LEGO League coaching mindset</p>
+                  <p class="mt-2 text-sm leading-7 text-slate-300">
+                    Our robotics approach reflects the spirit of LEGO League-style learning: teamwork, creativity, design
+                    iteration, and confident presentation.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="mx-auto max-w-7xl px-6 pb-20 lg:px-8">
+          <div class="grid gap-6 lg:grid-cols-3">
+            <article class="glass rounded-[2rem] border border-white/10 p-7">
+              <p class="text-sm font-semibold uppercase tracking-[0.3em] text-spark">Professional background</p>
+              <h2 class="mt-4 text-2xl font-black text-white">Built on real-world software experience</h2>
+              <p class="mt-4 text-sm leading-7 text-slate-300">
+                Students learn from a program shaped by an experienced software developer and ethical programmer who understands
+                both technical depth and age-appropriate teaching. Lessons are designed to feel exciting for kids while still
+                building strong logic, creativity, and digital problem-solving skills.
+              </p>
+            </article>
+
+            <article class="glass rounded-[2rem] border border-white/10 p-7">
+              <p class="text-sm font-semibold uppercase tracking-[0.3em] text-sun">Coaching approach</p>
+              <h2 class="mt-4 text-2xl font-black text-white">Robotics with teamwork and confidence</h2>
+              <p class="mt-4 text-sm leading-7 text-slate-300">
+                Our teaching style brings together coding instruction, LEGO League coaching values, and hands-on STEM challenges.
+                Kids are encouraged to test ideas, work through mistakes, collaborate well, and proudly explain what they built.
+              </p>
+            </article>
+
+            <article class="glass rounded-[2rem] border border-white/10 p-7">
+              <p class="text-sm font-semibold uppercase tracking-[0.3em] text-pop">Trainer quality</p>
+              <h2 class="mt-4 text-2xl font-black text-white">Highly qualified trainers for young learners</h2>
+              <p class="mt-4 text-sm leading-7 text-slate-300">
+                RoboPal Academy works with highly qualified trainers who bring years of experience in handling and training kids.
+                We focus on patience, encouragement, clear communication, and safe, engaging classroom energy.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="mx-auto max-w-7xl px-6 pb-20 lg:px-8">
+          <div class="glass rounded-[2rem] border border-white/10 p-8 md:p-10">
+            <div class="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+              <div>
+                <p class="text-sm font-semibold uppercase tracking-[0.3em] text-neon">What families can expect</p>
+                <h2 class="mt-4 text-4xl font-black tracking-tight text-white">A learning environment that is warm, disciplined, and inspiring.</h2>
+                <p class="mt-4 text-slate-300 leading-8">
+                  We believe kids learn best when they feel supported, challenged, and proud of their progress. That means
+                  every class is designed to balance creativity, structure, and real accomplishment.
+                </p>
+              </div>
+
+              <div class="grid gap-4 md:grid-cols-2">
+                <div class="rounded-[1.75rem] border border-white/10 bg-white/5 p-5">
+                  <p class="font-bold text-white">Age-aware instruction</p>
+                  <p class="mt-2 text-sm leading-7 text-slate-300">Complex ideas are explained clearly for kids without oversimplifying the learning.</p>
+                </div>
+                <div class="rounded-[1.75rem] border border-white/10 bg-white/5 p-5">
+                  <p class="font-bold text-white">Ethical technology habits</p>
+                  <p class="mt-2 text-sm leading-7 text-slate-300">Students learn responsible use of AI, code, and digital tools from the beginning.</p>
+                </div>
+                <div class="rounded-[1.75rem] border border-white/10 bg-white/5 p-5">
+                  <p class="font-bold text-white">Positive classroom energy</p>
+                  <p class="mt-2 text-sm leading-7 text-slate-300">Our trainers know how to keep kids engaged, focused, and excited to participate.</p>
+                </div>
+                <div class="rounded-[1.75rem] border border-white/10 bg-white/5 p-5">
+                  <p class="font-bold text-white">Visible outcomes</p>
+                  <p class="mt-2 text-sm leading-7 text-slate-300">Families see real progress through robots, games, websites, presentations, and showcases.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="mx-auto max-w-7xl px-6 pb-24 lg:px-8">
+          <div class="overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-r from-spark/30 via-slate-900 to-neon/20 p-8 md:p-10">
+            <div class="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+              <div>
+                <p class="text-sm font-semibold uppercase tracking-[0.3em] text-neon">Ready to learn more?</p>
+                <h2 class="mt-3 text-3xl font-black text-white">Explore the full curriculum or contact us for program details.</h2>
+              </div>
+              <div class="flex flex-wrap gap-4">
+                <a
+                  href="index.html#programs"
+                  class="rounded-full bg-white px-6 py-3 text-sm font-bold text-slate-950 transition hover:scale-[1.02]"
+                >
+                  View Programs
+                </a>
+                <a
+                  href="index.html#contact"
+                  class="rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/10"
+                >
+                  Contact Us
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="mx-auto max-w-7xl px-6 pb-8 lg:px-8">
+        <p class="text-center text-xs text-slate-400">
+          EV3 image credits: Gyro Boy photo by Klaus-Dieter Keller via Wikimedia Commons, and LEGO Mindstorms EV3 box art via Wikipedia.
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
